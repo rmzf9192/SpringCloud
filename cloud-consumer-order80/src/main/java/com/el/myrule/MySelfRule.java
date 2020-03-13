@@ -1,0 +1,21 @@
+package com.el.myrule;
+
+import com.netflix.loadbalancer.IRule;
+import com.netflix.loadbalancer.RoundRobinRule;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+/**
+ * @author Roman.Zhang
+ * @date 2020/3/8
+ * @description:
+ */
+@Configuration
+public class MySelfRule {
+
+    @Bean
+    public IRule myRule() {
+        // 定义为随机
+        return new RoundRobinRule();
+    }
+}
